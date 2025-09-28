@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://caf2p3mxv3g60"]
+
+[ext_resource type="Texture2D" uid="uid://1gabeltxnwh2" path="res://9259344.jpg" id="1_0hol4"]
+[ext_resource type="Script" uid="uid://bg62dl5frgutx" path="res://menü.gd" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bvvsxc180heq" path="res://play_button_idle.png" id="2_q6r6c"]
+[ext_resource type="FontFile" uid="uid://begys37367k2g" path="res://BoldPixels.ttf" id="4_d21ai"]
+[ext_resource type="Texture2D" uid="uid://wsycjq1v887l" path="res://assets/secret_button_normal.png" id="6_kdubu"]
+
+[node name="kezdokepernyo" type="Node2D"]
+scale = Vector2(0.998535, 0.992629)
+script = ExtResource("1_q6r6c")
+
+[node name="play" type="TextureButton" parent="."]
+offset_left = 757.0
+offset_top = 691.0
+offset_right = 1188.0
+offset_bottom = 818.0
+texture_normal = ExtResource("2_q6r6c")
+
+[node name="hatter" type="Sprite2D" parent="."]
+position = Vector2(961.409, 544.01)
+scale = Vector2(0.640939, 0.54401)
+texture = ExtResource("1_0hol4")
+
+[node name="playgomb" type="Sprite2D" parent="."]
+position = Vector2(962.943, 754)
+scale = Vector2(4.41602, 4.41602)
+texture = ExtResource("2_q6r6c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 384.941
+offset_top = 168.0
+offset_right = 1482.94
+offset_bottom = 481.0
+theme_override_colors/default_color = Color(0, 0.282353, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_d21ai")
+theme_override_font_sizes/normal_font_size = 150
+text = "  Walking Dead:
+  Pixel edition"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1643.41
+offset_top = 41.3045
+offset_right = 1835.41
+offset_bottom = 101.304
+texture_normal = ExtResource("6_kdubu")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

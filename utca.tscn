@@ -1,0 +1,266 @@
+[gd_scene load_steps=30 format=3 uid="uid://xx8lr5jqcqh4"]
+
+[ext_resource type="Texture2D" uid="uid://clksclj7auc0b" path="res://back.png" id="1_qgui2"]
+[ext_resource type="Script" uid="uid://d1kq0liclqlfi" path="res://kert.gd" id="2_jkacg"]
+[ext_resource type="Texture2D" uid="uid://cvkx31wpqklva" path="res://assets/fiu_pislog1.png" id="3_2soum"]
+[ext_resource type="Texture2D" uid="uid://bljpkcxtvimfc" path="res://assets/fiu_pislog.png" id="4_lgv3q"]
+[ext_resource type="Texture2D" uid="uid://ba84qleiv58ru" path="res://zombie/pngegg.png" id="5_2soum"]
+[ext_resource type="Script" uid="uid://bvrhqgp7kcxfc" path="res://zombi.gd" id="5_lgv3q"]
+[ext_resource type="Texture2D" uid="uid://djw418tek1iuw" path="res://assets/utca.jpg" id="7_w22ka"]
+[ext_resource type="Texture2D" uid="uid://c5l5tfwfcrl5n" path="res://icon.svg" id="8_hnxgq"]
+[ext_resource type="Texture2D" uid="uid://i8vxykqsjiiu" path="res://assets/family-removebg-preview.png" id="9_cyte0"]
+[ext_resource type="Texture2D" uid="uid://cqs863vtdo3up" path="res://kepek/vindisel-removebg-preview.png" id="10_m50dq"]
+[ext_resource type="Texture2D" uid="uid://bsfc13omg4dqa" path="res://kepek/download-removebg-preview.png" id="11_jdhdh"]
+[ext_resource type="Script" uid="uid://b3e7tgjlpemgt" path="res://rigid_body_2d.gd" id="11_q7bb2"]
+[ext_resource type="Script" uid="uid://dlxqfpiy77357" path="res://static_body_2d_5.gd" id="13_3425a"]
+[ext_resource type="Script" uid="uid://c840d8jdjlhqf" path="res://area_2d.gd" id="14_3425a"]
+[ext_resource type="Texture2D" uid="uid://jc71vl5y8si2" path="res://kepek/istockphoto-1443991985-612x612-removebg-preview.png" id="15_sakn0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qgui2"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_laibp"]
+a = Vector2(-4944, -84)
+b = Vector2(352.5, -45)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_chau3"]
+b = Vector2(958, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jkacg"]
+a = Vector2(-3, -6)
+b = Vector2(250, 121)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w22ka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2soum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lgv3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hnxgq"]
+radius = 58.0
+height = 396.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2soum"]
+size = Vector2(19, 572)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w22ka"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hnxgq"]
+a = Vector2(1, -531)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cyte0"]
+a = Vector2(-57, 1)
+b = Vector2(-59, 95)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdhdh"]
+radius = 93.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdhdh"]
+size = Vector2(339, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3425a"]
+size = Vector2(585, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sakn0"]
+size = Vector2(20, 1225)
+
+[node name="Node2D4" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 440)
+texture = ExtResource("1_qgui2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3, 829)
+physics_material_override = SubResource("PhysicsMaterial_qgui2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(353, 51)
+shape = SubResource("SegmentShape2D_laibp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(961, 961)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("SegmentShape2D_chau3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(710, 840)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("SegmentShape2D_jkacg")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
+script = ExtResource("2_jkacg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(156.5, 601.5)
+scale = Vector2(7.92187, 7.92187)
+sprite_frames = SubResource("SpriteFrames_w22ka")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+visible = false
+offset_left = 922.0
+offset_top = 539.0
+offset_right = 1096.0
+offset_bottom = 1067.0
+scale = Vector2(0.769817, 0.769817)
+texture = ExtResource("4_lgv3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(156.5, 617.5)
+shape = SubResource("CapsuleShape2D_hnxgq")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(156, 490)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(1378, 770)
+script = ExtResource("5_lgv3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(48.0001, -91)
+scale = Vector2(0.818182, 1)
+texture = ExtResource("5_2soum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(-50.5, -105)
+shape = SubResource("RectangleShape2D_2soum")
+one_way_collision = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 13.0
+offset_top = 230.0
+offset_right = 165.0
+offset_bottom = 281.0
+scale = Vector2(1.6, 1.6)
+text = "FUSS VISSZAFELÉ!!!"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-3585.5, 262)
+scale = Vector2(1.11278, 1)
+texture = ExtResource("7_w22ka")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+position = Vector2(-1290.75, 409.5)
+scale = Vector2(2582.5, 5217)
+texture = SubResource("CanvasTexture_w22ka")
+
+[node name="ShrinkTrigger" type="Area2D" parent="."]
+position = Vector2(-1099, 545)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShrinkTrigger"]
+visible = false
+position = Vector2(-3, -27)
+texture = ExtResource("8_hnxgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkTrigger"]
+position = Vector2(9, 166)
+shape = SubResource("SegmentShape2D_hnxgq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-4488, 744)
+scale = Vector2(0.369681, 0.369681)
+texture = ExtResource("9_cyte0")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-3822, 387)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("SegmentShape2D_cyte0")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+z_index = 4
+offset_left = -2577.0
+offset_top = 403.0
+offset_right = -2365.0
+offset_bottom = 459.0
+scale = Vector2(9.41, 9.41)
+text = "5 perccel később"
+
+[node name="Vindisel-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(-4432, 484)
+texture = ExtResource("10_m50dq")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-3720, -531)
+script = ExtResource("11_q7bb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 5)
+texture = ExtResource("11_jdhdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_jdhdh")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-3833, -363)
+script = ExtResource("13_3425a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(124.5, -33.5)
+shape = SubResource("RectangleShape2D_jdhdh")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3618, 715)
+script = ExtResource("14_3425a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-105, 55)
+shape = SubResource("RectangleShape2D_3425a")
+
+[node name="Kuapk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-3689, 515)
+scale = Vector2(1.615, 1.615)
+texture = ExtResource("15_sakn0")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -4301.0
+offset_top = 772.0
+offset_right = -4255.0
+offset_bottom = 803.0
+text = "Nem"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -4372.0
+offset_top = 771.0
+offset_right = -4312.0
+offset_bottom = 802.0
+text = "Igen"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -4372.0
+offset_top = 703.0
+offset_right = -4239.0
+offset_bottom = 768.0
+text = "Megmented
+ a családod?"
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-4600, 796)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(0, -602.5)
+shape = SubResource("RectangleShape2D_sakn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6/CollisionShape2D"]
+position = Vector2(6503, 251.5)
+shape = SubResource("RectangleShape2D_sakn0")
+
+[connection signal="body_entered" from="ShrinkTrigger" to="CharacterBody2D" method="_on_shrink_trigger_body_entered"]
+[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Button" to="CharacterBody2D" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="CharacterBody2D" method="_on_button_2_pressed"]

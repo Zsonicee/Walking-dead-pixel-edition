@@ -1,0 +1,13 @@
+extends CharacterBody2D
+const SPEED = 80
+
+func _ready() -> void:
+	return
+	
+func _physics_process(_delta: float) -> void:
+		var direction
+		direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = direction * SPEED
+		move_and_slide()
+
+https://chatgpt.com/share/68d7c5b8-190c-8002-94ec-13fc8f37bd29

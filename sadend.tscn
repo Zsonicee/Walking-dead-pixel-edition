@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgv1pvofbwhp3"]
+
+[ext_resource type="Texture2D" uid="uid://dbl0yj5g18yhn" path="res://kepek/20250928_1637_Melancholic Background_simple_compose_01k68c1zv2f6evgewtdc0w8qc8.png" id="1_5772f"]
+[ext_resource type="Texture2D" uid="uid://gv685fwnx31g" path="res://kepek/sadness-person-depression-clip-art-bored-cliparts-e0ba9be8dd0f8dac4c9e9b19a7d1d958.png" id="2_nf2yw"]
+
+[node name="sadend" type="Node2D"]
+
+[node name="202509281637MelancholicBackgroundSimpleCompose01k68c1Zv2f6Evgewtdc0w8Qc8" type="Sprite2D" parent="."]
+position = Vector2(960, 539.5)
+scale = Vector2(1.25, 1.05566)
+texture = ExtResource("1_5772f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 488.0
+offset_top = -3.0
+offset_right = 552.0
+offset_bottom = 24.0
+scale = Vector2(12.415, 12.415)
+text = "Sad End"
+
+[node name="Sadness-person-depression-clip-art-bored-cliparts-e0Ba9Be8Dd0f8Dac4c9e9b19a7d1d958" type="Sprite2D" parent="."]
+position = Vector2(895, 667)
+scale = Vector2(0.730228, 0.730228)
+texture = ExtResource("2_nf2yw")

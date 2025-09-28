@@ -1,0 +1,147 @@
+[gd_scene load_steps=17 format=3 uid="uid://p56ylxejnvar"]
+
+[ext_resource type="Texture2D" uid="uid://dolhblwwu2cwq" path="res://ChatGPT Image Sep 28, 2025, 02_13_40 PM.png" id="1_p5f73"]
+[ext_resource type="Script" uid="uid://d1kq0liclqlfi" path="res://kert.gd" id="2_4swb1"]
+[ext_resource type="PackedScene" uid="uid://bx53b26rqitg3" path="res://ui/ScenePopup.tscn" id="2_45lxd"]
+[ext_resource type="Texture2D" uid="uid://cvkx31wpqklva" path="res://assets/fiu_pislog1.png" id="3_45lxd"]
+[ext_resource type="Texture2D" uid="uid://bljpkcxtvimfc" path="res://assets/fiu_pislog.png" id="4_nh8vk"]
+[ext_resource type="Script" uid="uid://g14fw14w35ww" path="res://main.gd" id="6_a4x6i"]
+[ext_resource type="Script" uid="uid://dyyv2sbgmw504" path="res://QuestManager.gd" id="7_ef5r3"]
+[ext_resource type="Script" uid="uid://byqhftcxit2cq" path="res://Quest.gd" id="8_yfeap"]
+[ext_resource type="Texture2D" uid="uid://c6pg20byci5c2" path="res://fekete.jpg" id="9_ef5r3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh8vk"]
+size = Vector2(1944, 76)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a4x6i"]
+a = Vector2(1864, 850)
+b = Vector2(1143, 1050)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ef5r3"]
+a = Vector2(901, 1043)
+b = Vector2(45, 898)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfeap"]
+size = Vector2(52, 1056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppjas"]
+size = Vector2(21, 1073.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ui63x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_45lxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nh8vk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksg2n"]
+radius = 58.0
+height = 396.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540)
+scale = Vector2(1.24935, 1.05469)
+texture = ExtResource("1_p5f73")
+
+[node name="fal1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fal1"]
+position = Vector2(955, 1077)
+shape = SubResource("RectangleShape2D_nh8vk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fal1"]
+shape = SubResource("SegmentShape2D_a4x6i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="fal1"]
+shape = SubResource("SegmentShape2D_ef5r3")
+
+[node name="fal2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fal2"]
+position = Vector2(16, 518)
+shape = SubResource("RectangleShape2D_yfeap")
+
+[node name="fal3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fal3"]
+position = Vector2(1919.5, 488.75)
+shape = SubResource("RectangleShape2D_ppjas")
+
+[node name="scene valaszto" type="TextureButton" parent="."]
+offset_left = 1567.0
+offset_top = 121.0
+offset_right = 1882.0
+offset_bottom = 846.0
+
+[node name="GotoKertPopup" parent="scene valaszto" instance=ExtResource("2_45lxd")]
+visible = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-827, -42)
+script = ExtResource("2_4swb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(986, 733)
+scale = Vector2(7.92187, 7.92187)
+sprite_frames = SubResource("SpriteFrames_ui63x")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+visible = false
+offset_left = 922.0
+offset_top = 539.0
+offset_right = 1096.0
+offset_bottom = 1067.0
+scale = Vector2(0.769817, 0.769817)
+texture = ExtResource("4_nh8vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(984, 740)
+shape = SubResource("CapsuleShape2D_ksg2n")
+
+[node name="Control" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 907.0
+offset_top = 110.0
+offset_right = 947.0
+offset_bottom = 150.0
+script = ExtResource("6_a4x6i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D/Control"]
+
+[node name="QuestManager" type="VBoxContainer" parent="CharacterBody2D/Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_ef5r3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterBody2D"]
+offset_left = 947.0
+offset_top = 163.0
+offset_right = 1090.0
+offset_bottom = 201.0
+scale = Vector2(2.72, 2.72)
+script = ExtResource("8_yfeap")
+
+[node name="CheckBox" type="CheckBox" parent="CharacterBody2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CharacterBody2D/HBoxContainer"]
+layout_mode = 2
+text = "questek"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D/HBoxContainer"]
+modulate = Color(0, 0, 0, 0.427451)
+position = Vector2(49.6286, 18.6324)
+scale = Vector2(0.0573555, 0.0221084)
+texture = ExtResource("9_ef5r3")
+
+[connection signal="pressed" from="scene valaszto" to="scene valaszto/GotoKertPopup" method="_on_scene_valaszto_pressed"]
