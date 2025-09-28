@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://been1mgrxuved"]
+
+[ext_resource type="Script" uid="uid://d1kq0liclqlfi" path="res://kert.gd" id="1_jffx5"]
+[ext_resource type="Texture2D" uid="uid://cvkx31wpqklva" path="res://assets/fiu_pislog1.png" id="2_smn6s"]
+[ext_resource type="Texture2D" uid="uid://bljpkcxtvimfc" path="res://assets/fiu_pislog.png" id="3_fm5rb"]
+[ext_resource type="Texture2D" uid="uid://bh30exnrtk4u2" path="res://ChatGPT Image Sep 28, 2025, 08_38_59 AM.png" id="4_smn6s"]
+[ext_resource type="PackedScene" uid="uid://bx53b26rqitg3" path="res://ui/ScenePopup.tscn" id="5_fm5rb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1af8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_smn6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fm5rb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nuryi"]
+radius = 58.0
+height = 396.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smn6s"]
+size = Vector2(1958.5, 101.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm5rb"]
+size = Vector2(32, 1023)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1af8b"]
+size = Vector2(77, 1013)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.25, 1.05469)
+texture = ExtResource("4_smn6s")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_jffx5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(638, 733)
+scale = Vector2(7.92187, 7.92187)
+sprite_frames = SubResource("SpriteFrames_1af8b")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+visible = false
+offset_left = 922.0
+offset_top = 539.0
+offset_right = 1096.0
+offset_bottom = 1067.0
+scale = Vector2(0.769817, 0.769817)
+texture = ExtResource("3_fm5rb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(639, 723)
+shape = SubResource("CapsuleShape2D_nuryi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(954.75, 1076.25)
+shape = SubResource("RectangleShape2D_smn6s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(6, 501.5)
+shape = SubResource("RectangleShape2D_fm5rb")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1883.5, 512.5)
+shape = SubResource("RectangleShape2D_1af8b")
+
+[node name="scene valaszto" type="TextureButton" parent="."]
+offset_left = 1567.0
+offset_top = 121.0
+offset_right = 1882.0
+offset_bottom = 846.0
+
+[node name="GotoKertPopup" parent="scene valaszto" instance=ExtResource("5_fm5rb")]
+visible = false
+
+[connection signal="pressed" from="scene valaszto" to="scene valaszto/GotoKertPopup" method="_on_scene_valaszto_pressed"]

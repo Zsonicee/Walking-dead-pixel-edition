@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1oq4mimha0cm"]
+
+[ext_resource type="VideoStream" path="res://After Dark 🌙 (CS2 MONTAGE).ogv" id="1_6p8jv"]
+[ext_resource type="Texture2D" uid="uid://c77tifv0745ax" path="res://zsé.png" id="2_hp44g"]
+[ext_resource type="Script" uid="uid://covk1cuj30ja5" path="res://sprite_2d.gd" id="3_7w1l3"]
+[ext_resource type="Script" uid="uid://c1ogl03ahf4v8" path="res://gomb.gd" id="4_hp44g"]
+
+[node name="Node2D4" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(3, 3)
+stream = ExtResource("1_6p8jv")
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1555.0
+offset_top = 916.0
+offset_right = 1860.0
+offset_bottom = 1024.0
+text = "SKIP"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(87, 1012)
+scale = Vector2(0.430693, 0.439873)
+texture = ExtResource("2_hp44g")
+script = ExtResource("3_7w1l3")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 996.0
+offset_right = 142.0
+offset_bottom = 1028.0
+script = ExtResource("4_hp44g")
+
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="Sprite2D" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

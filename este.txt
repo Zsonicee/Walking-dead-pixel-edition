@@ -1,0 +1,15 @@
+este:
+-gépnél indul
+-questeket general
+-le kell menni a csaladodhoz
+	-ott questek
+-fel mesz aludni
+-reggel felkelsz
+-lemesz enni
+	-csaladod sehol
+		-questek megjelennek
+-ki kell menni a kertbe
+	-latod a zombikat
+-visszamész bepanikolva a hazba
+	-questek megjelenese
+		-kimész az utcara

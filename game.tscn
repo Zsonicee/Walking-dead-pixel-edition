@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvpeqpsw1wvjr"]
+
+[ext_resource type="Texture2D" uid="uid://dftbyxgyjjjbk" path="res://valami.jpg" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://jmtafvqcqcjq" path="res://assets/fiuka.png" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://nb1oe2j2k7rk" path="res://karakter.gd" id="2_feb5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(1910.09, 325.416)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
+radius = 51.0
+height = 254.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(8010.5, 113)
+
+[node name="Node2D3" type="Node2D"]
+
+[node name="Valami" type="Sprite2D" parent="."]
+position = Vector2(963, 1029)
+scale = Vector2(1.0099, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami/StaticBody2D"]
+position = Vector2(-2.9706, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_feb5d")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+offset_left = 153.0
+offset_top = 618.0
+offset_right = 391.0
+offset_bottom = 890.0
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(272, 758)
+shape = SubResource("CapsuleShape2D_fc0e3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(960, 540)
+
+[node name="Valami2" type="Sprite2D" parent="."]
+position = Vector2(2544, 1037)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami2/StaticBody2D"]
+position = Vector2(-19.082, -181.957)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Valami3" type="Sprite2D" parent="."]
+position = Vector2(3406, 904)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami3/StaticBody2D"]
+position = Vector2(-9.53906, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Valami4" type="Sprite2D" parent="."]
+position = Vector2(4210, 762)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami4/StaticBody2D"]
+position = Vector2(-9.53906, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Valami5" type="Sprite2D" parent="."]
+position = Vector2(4849, 712)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami5/StaticBody2D"]
+position = Vector2(-9.53906, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Valami6" type="Sprite2D" parent="."]
+position = Vector2(5549, 619)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami6/StaticBody2D"]
+position = Vector2(-9.53906, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3524.75, 1223)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="Valami7" type="Sprite2D" parent="."]
+position = Vector2(-706, 1047)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami7/StaticBody2D"]
+position = Vector2(-19.082, -181.957)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Valami8" type="Sprite2D" parent="."]
+position = Vector2(-1378, 2184)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami8/StaticBody2D"]
+position = Vector2(-19.082, -181.957)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5903, 1290)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1075, 2636)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="Valami9" type="Sprite2D" parent="."]
+position = Vector2(6247, 563)
+scale = Vector2(0.209638, 0.136364)
+texture = ExtResource("1_80nbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Valami9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valami9/StaticBody2D"]
+position = Vector2(-9.53906, -197.999)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 5991.0
+offset_top = 204.0
+offset_right = 6496.0
+offset_bottom = 488.0
+
+[connection signal="pressed" from="Button" to="CharacterBody2D" method="_on_button_pressed"]

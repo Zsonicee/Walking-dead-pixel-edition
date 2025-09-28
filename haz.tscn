@@ -1,0 +1,223 @@
+[gd_scene load_steps=23 format=3 uid="uid://bmo4on1kkj35n"]
+
+[ext_resource type="VideoStream" path="res://After Dark 🌙 (CS2 MONTAGE).ogv" id="1_nsnq8"]
+[ext_resource type="Texture2D" uid="uid://bwmcf1xa4qjnw" path="res://ChatGPT Image Sep 27, 2025, 01_15_13 PM.png" id="1_vs83j"]
+[ext_resource type="Texture2D" uid="uid://c6pg20byci5c2" path="res://fekete.jpg" id="2_cg4jj"]
+[ext_resource type="Script" uid="uid://d1kq0liclqlfi" path="res://kert.gd" id="3_amokx"]
+[ext_resource type="Texture2D" uid="uid://cvkx31wpqklva" path="res://assets/fiu_pislog1.png" id="3_bt821"]
+[ext_resource type="Texture2D" uid="uid://bljpkcxtvimfc" path="res://assets/fiu_pislog.png" id="3_g4di0"]
+[ext_resource type="AudioStream" uid="uid://cvrwn1p2ikyuv" path="res://HANG/UNFIELD - Pörög a show (OFFICIAL MUSIC VIDEO).mp3" id="6_amokx"]
+[ext_resource type="VideoStream" uid="uid://co5x80yjr3316" path="res://assets/cs2.ogv" id="6_bt821"]
+[ext_resource type="Script" uid="uid://g14fw14w35ww" path="res://main.gd" id="9_4xc0y"]
+[ext_resource type="Script" uid="uid://byqhftcxit2cq" path="res://Quest.gd" id="9_8nn5g"]
+[ext_resource type="Script" uid="uid://dyyv2sbgmw504" path="res://QuestManager.gd" id="9_tl4qt"]
+[ext_resource type="Texture2D" uid="uid://cjb0lcim2ecxp" path="res://kepek/unfild.png" id="11_cg4jj"]
+[ext_resource type="PackedScene" uid="uid://bx53b26rqitg3" path="res://ui/ScenePopup.tscn" id="12_cg4jj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amokx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bt821")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g4di0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_an0ll"]
+radius = 58.0
+height = 396.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvgcb"]
+size = Vector2(479, 343.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs83j"]
+size = Vector2(1927.5, 53.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1625"]
+size = Vector2(20, 1039)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4di0"]
+size = Vector2(44, 1043)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt821"]
+size = Vector2(221, 659.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amokx"]
+size = Vector2(480, 442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl4qt"]
+size = Vector2(289.5, 574.5)
+
+[node name="Node2D5" type="Node2D"]
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 512.0
+offset_top = 259.0
+offset_right = 1152.0
+offset_bottom = 619.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_nsnq8")
+volume_db = 24.0
+autoplay = true
+buffering_msec = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.25, 1.05469)
+texture = ExtResource("1_vs83j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0.427451)
+position = Vector2(312, 160.5)
+scale = Vector2(0.204667, 0.0605776)
+texture = ExtResource("2_cg4jj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_4xc0y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="QuestManager" type="VBoxContainer" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_tl4qt")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 933.0
+offset_top = 465.0
+offset_right = 1573.0
+offset_bottom = 825.0
+scale = Vector2(0.415, 0.415)
+stream = ExtResource("6_bt821")
+volume_db = -80.0
+autoplay = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 40.0
+offset_top = 53.0
+offset_right = 183.0
+offset_bottom = 91.0
+scale = Vector2(2.72, 2.72)
+script = ExtResource("9_8nn5g")
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "questek"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_amokx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(986, 733)
+scale = Vector2(7.92187, 7.92187)
+sprite_frames = SubResource("SpriteFrames_amokx")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+visible = false
+offset_left = 922.0
+offset_top = 539.0
+offset_right = 1096.0
+offset_bottom = 1067.0
+scale = Vector2(0.769817, 0.769817)
+texture = ExtResource("3_g4di0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(984, 740)
+shape = SubResource("CapsuleShape2D_an0ll")
+
+[node name="gep" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/gep"]
+position = Vector2(1241, 699)
+shape = SubResource("RectangleShape2D_vvgcb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(962.25, 1049.75)
+shape = SubResource("RectangleShape2D_vs83j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 509.5)
+shape = SubResource("RectangleShape2D_j1625")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1893, 511.5)
+shape = SubResource("RectangleShape2D_g4di0")
+
+[node name="ajto" type="StaticBody2D" parent="."]
+
+[node name="ajto" type="CollisionShape2D" parent="ajto"]
+position = Vector2(1743, 590)
+shape = SubResource("RectangleShape2D_bt821")
+
+[node name="agy" type="StaticBody2D" parent="."]
+
+[node name="agy" type="CollisionShape2D" parent="agy"]
+position = Vector2(262, 795)
+shape = SubResource("RectangleShape2D_amokx")
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(191, 226)
+size = Vector2i(1514, 684)
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_top = 511.0
+offset_right = 670.0
+offset_bottom = 1020.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_amokx")
+autoplay = true
+
+[node name="1900x1900-000000-80-0-0" type="Sprite2D" parent="."]
+position = Vector2(1070.5, 322)
+scale = Vector2(0.371053, 0.116842)
+texture = ExtResource("11_cg4jj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1066, 538)
+scale = Vector2(3083.49, 0.957397)
+enabled = false
+zoom = Vector2(6, 6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1070.25, 742.75)
+shape = SubResource("RectangleShape2D_tl4qt")
+
+[node name="scene valaszto" type="TextureButton" parent="."]
+offset_left = 1595.0
+offset_top = 180.0
+offset_right = 1882.0
+offset_bottom = 960.0
+
+[node name="GotoKertPopup" parent="scene valaszto" instance=ExtResource("12_cg4jj")]
+visible = false
+
+[connection signal="pressed" from="TextureButton" to="CharacterBody2D" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="scene valaszto" to="scene valaszto/GotoKertPopup" method="_on_scene_valaszto_pressed"]

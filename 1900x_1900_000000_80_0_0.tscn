@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqgfmw3pwxhya"]
+
+[ext_resource type="Texture2D" uid="uid://cqsd2v8mtoolc" path="res://kepek/1900x1900-000000-80-0-0.jpg" id="1_6noum"]
+[ext_resource type="Script" uid="uid://ctvrw747wgs6i" path="res://button.gd" id="2_2vqjk"]
+
+[node name="1900x1900-000000-80-0-0" type="Sprite2D"]
+position = Vector2(960, 540)
+scale = Vector2(1.01053, 0.568421)
+texture = ExtResource("1_6noum")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.202526, 0.408576, 9.62615e-08, 1)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.352
+offset_left = -693.698
+offset_top = -948.241
+offset_right = -2486.7
+offset_bottom = -1577.04
+scale = Vector2(13.75, 13.75)
+text = "HAPPY END"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -950.0
+offset_top = -948.0
+offset_right = 950.0
+offset_bottom = 950.0
+script = ExtResource("2_2vqjk")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

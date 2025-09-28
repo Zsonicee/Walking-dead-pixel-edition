@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://brdh83wypqr4x"]
+
+[ext_resource type="Script" uid="uid://d1kq0liclqlfi" path="res://kert.gd" id="1_l7p2u"]
+[ext_resource type="Texture2D" uid="uid://cvkx31wpqklva" path="res://assets/fiu_pislog1.png" id="2_of8pk"]
+[ext_resource type="Texture2D" uid="uid://bljpkcxtvimfc" path="res://assets/fiu_pislog.png" id="3_12m7k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xeyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_of8pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_12m7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vkf8v"]
+radius = 58.0
+height = 396.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7p2u"]
+size = Vector2(1919, 116)
+
+[node name="HUI" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_l7p2u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(330.5, 601.5)
+scale = Vector2(7.92187, 7.92187)
+sprite_frames = SubResource("SpriteFrames_1xeyf")
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+visible = false
+offset_left = 922.0
+offset_top = 539.0
+offset_right = 1096.0
+offset_bottom = 1067.0
+scale = Vector2(0.769817, 0.769817)
+texture = ExtResource("3_12m7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(328.5, 608.5)
+shape = SubResource("CapsuleShape2D_vkf8v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(955.5, 1011)
+shape = SubResource("RectangleShape2D_l7p2u")
+
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
+offset_right = 40.0
+offset_bottom = 40.0

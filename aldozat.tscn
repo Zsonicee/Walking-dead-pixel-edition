@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://dx8xrkobnilug"]
+
+[ext_resource type="Script" uid="uid://cnex77wbv7prb" path="res://aldozat.gd" id="1_gyedk"]
+[ext_resource type="Texture2D" uid="uid://b8yvtvncs88sd" path="res://kepek/20250928_1506_Bare Feet Road_simple_compose_01k686vk7dfq6a385pa41ypk1e.png" id="1_u0c7q"]
+[ext_resource type="Script" uid="uid://ctvrw747wgs6i" path="res://button.gd" id="3_2lkeg"]
+[ext_resource type="Texture2D" uid="uid://d1a10sjfuasb" path="res://kepek/236485066-red-blood-splatter-in-pixel-art-style-pixelated-blood-stain-with-drips-in-a-retro-design-removebg-preview.png" id="3_vr4hh"]
+[ext_resource type="Script" uid="uid://88wjq6x5ltn3" path="res://button_2.gd" id="4_5ejqv"]
+[ext_resource type="Script" uid="uid://bnrcj0c1ejygk" path="res://ciga.gd" id="5_5ejqv"]
+[ext_resource type="Script" uid="uid://d0s3p15j6eiuv" path="res://button_3.gd" id="5_q5mba"]
+[ext_resource type="Script" uid="uid://xhuipa2wkst1" path="res://button_4.gd" id="6_o6u4f"]
+
+[node name="aldozat" type="Node2D"]
+script = ExtResource("1_gyedk")
+
+[node name="202509281506BareFeetRoadSimpleCompose01k686Vk7Dfq6a385Pa41Ypk1e" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.25, 1.05469)
+texture = ExtResource("1_u0c7q")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 466.0
+offset_right = 578.0
+offset_bottom = 497.0
+rotation = -0.418023
+action_mode = 0
+text = "
+"
+script = ExtResource("3_2lkeg")
+
+[node name="Eikw" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(23.0513, 14.6163)
+rotation = 0.418023
+scale = Vector2(1, 1)
+texture = ExtResource("3_vr4hh")
+
+[node name="Ciga" type="Button" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.043
+anchor_top = 2.388
+anchor_right = 4.043
+anchor_bottom = 2.388
+offset_left = 91.3172
+offset_top = -314.04
+offset_right = 431.317
+offset_bottom = -190.04
+rotation = 0.412141
+text = "Add oda a zombinak"
+script = ExtResource("5_5ejqv")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 580.0
+offset_top = 430.0
+offset_right = 655.0
+offset_bottom = 452.0
+rotation = -0.399755
+script = ExtResource("4_5ejqv")
+
+[node name="Eikw" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(23.0513, 14.6163)
+rotation = 0.418023
+scale = Vector2(1, 1)
+texture = ExtResource("3_vr4hh")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 660.0
+offset_top = 396.0
+offset_right = 735.0
+offset_bottom = 418.0
+rotation = -0.152541
+script = ExtResource("5_q5mba")
+
+[node name="Eikw" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(23.0513, 14.6163)
+rotation = 0.418023
+scale = Vector2(1, 1)
+texture = ExtResource("3_vr4hh")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 743.0
+offset_top = 383.0
+offset_right = 815.0
+offset_bottom = 406.0
+rotation = -0.0625247
+script = ExtResource("6_o6u4f")
+
+[node name="Eikw" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(23.0513, 14.6163)
+rotation = 0.418023
+scale = Vector2(1, 1)
+texture = ExtResource("3_vr4hh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
